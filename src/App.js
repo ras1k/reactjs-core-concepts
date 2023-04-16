@@ -1,19 +1,29 @@
 import logo from './logo.svg';
 import './App.css';
 
-const singer = {
-  name: 'Someone',
-  job: 'Singer'
-}
+const singers = [
+  { name: 'Eminem', job: 'Singer' },
+  { name: 'Dre', job: 'Rapper' },
+  { name: 'Snoop', job: 'Producer'}
+]
 function App() {
-  const names = ['Rasik', 'Fahad', 'Enan']
+  const devs = ['Rasik', 'Fahad', 'Enan', 'Ishmam', 'Faiz'];
   return (
     <div className="App">
-      <Person name={names[0]} profssion="developer"></Person>
+      {/* {
+        names.map(name  => <li>{name}</li>)
+      } */}
+      {
+        devs.map(dev => <Person name={dev}></Person>)
+      }
+      {
+        singers.map(singer => <Person name ={singer.name}></Person>)
+      }
+      {/* <Person name={names[0]} profssion="developer"></Person>
       <Person name ={names[1]} profssion="fullstack"></Person>
-      <Person name={names[2]} profssion="programmer"></Person>
-      <Friend name ="lmao"></Friend>
-      <Friend></Friend>
+      <Person name={names[2]} profssion="programmer"></Person> */}
+      {/* <Friend name="lmao"></Friend>
+      <Friend></Friend> */}
     </div>
   );
 }
@@ -23,7 +33,7 @@ function Person(props) {
   return (
     <div className='person'>
       <h1>{props.name}</h1>
-      <h3>Profession : {props.profssion}</h3>
+      <h3>{props.profssion}</h3>
     </div>
   )
 }
